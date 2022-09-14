@@ -20,22 +20,54 @@ class FunctionsTest extends FunSuite {
 
     test("Fizz") {
         assertResult("Fizz") {
-//            fizzBuzz(3)
-            fail("To activate the test, uncomment the previous line and comment this line")
+            fizzBuzz(3)
+//            fail("To activate the test, uncomment the previous line and comment this line")
         }
     }
 
     test("Buzz") {
         assertResult("Buzz") {
-//            fizzBuzz(5)
-            fail("To activate the test, uncomment the previous line and comment this line")
+            fizzBuzz(5)
+//            fail("To activate the test, uncomment the previous line and comment this line")
+        }
+    }
+
+    test("FizzBuzz") {
+        assertResult("FizzBuzz") {
+            fizzBuzz(15)
+            //            fail("To activate the test, uncomment the previous line and comment this line")
+        }
+    }
+
+    test("other") {
+        assertResult("2") {
+            fizzBuzz(2)
+            //            fail("To activate the test, uncomment the previous line and comment this line")
         }
     }
 
     test("lambda") {
         assertResult(true, "lambda function definition is incorrect") {
-            //isEven(4)
-            fail("first provide the lambda definition, then remove this line and uncomment the above line")
+            isEven(4)
+//            fail("first provide the lambda definition, then remove this line and uncomment the above line")
+        }
+    }
+    test("lambda1") {
+        assertResult(false, "lambda function definition is incorrect") {
+            isEven(3)
+            //            fail("first provide the lambda definition, then remove this line and uncomment the above line")
+        }
+    }
+    test("lambda2") {
+        assertResult(true, "lambda function definition is incorrect") {
+            isOdd(3)
+            //            fail("first provide the lambda definition, then remove this line and uncomment the above line")
+        }
+    }
+    test("lambda3") {
+        assertResult(false, "lambda function definition is incorrect") {
+            isOdd(4)
+            //            fail("first provide the lambda definition, then remove this line and uncomment the above line")
         }
     }
 

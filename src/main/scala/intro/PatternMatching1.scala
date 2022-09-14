@@ -17,6 +17,12 @@ object PatternMatching1 {
    *
    */
   def sum(xs: List[Int]): Int = {
+    xs match {
+      case Nil => 0
+      case x::Nil => x
+      case x::xxs => x+sum(xxs)
+
+    }
 
     // Using `xs match` we "match" the value of the list.
     // This is called pattern matching.
@@ -99,7 +105,12 @@ object PatternMatching1 {
    *
    *         Hint: you can use if statements in pattern matching.
    */
-  def firstDivByX(xs: List[Int], n: Int): OptionalNum = ???
+  def firstDivByX(xs: List[Int], n: Int): OptionalNum = {
+    xs match {
+      case Nil=> Nothing()
+      case  x::xxs => if(x%n==0){Num(x)}else{firstDivByX(xxs,n)}
+    }
+  }
 
   /** Q4 (2p)
    * Implement this function that returns a list of only the even numbers.
@@ -108,5 +119,13 @@ object PatternMatching1 {
    * @param xs the list to process.
    * @return the list of all even numbers in xs.
    */
-  def onlyEvenNumbers(xs: List[OptionalNum]): List[Int] = ???
+  def onlyEvenNumbers(xs: List[OptionalNum]): List[Int] ={
+        xs match {
+          case Nil=>Nil
+          case Nothing()::xxs=> onlyEvenNumbers(xxs)
+          case Num(x)::xxs if x % 2 == 1=> onlyEvenNumbers(xxs)
+          case Num(x)::xxs => x::onlyEvenNumbers(xxs)
+        }
+
+  }
 }
